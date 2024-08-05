@@ -1,5 +1,6 @@
 package singly_linkedlist;
 
+import java.util.Scanner;
 
 public class SinglyLL_WithoutTail {
 	
@@ -46,6 +47,30 @@ public class SinglyLL_WithoutTail {
 		
 		singlyLL_WithoutTail.displayLL_Data();
 		singlyLL_WithoutTail.displayLL_Next();
+	}
+	
+	//UC2 -> add object in the firstIndex
+	public void addFirstIndex() {
+		
+		Scanner myObjectValue = new Scanner(System.in);
+		System.out.print("Enter number to add in SLL at First Index : ");
+		int nodeInputData = myObjectValue.nextInt();
+		
+		//step1 : Create a new node
+		Node newNode = new Node(nodeInputData);
+		
+		//checking LL is empty
+		if(head == null) {
+			head = newNode;
+			return;
+		}
+		
+		//step 2 : newNode.next is null; So we have replace the value with Head
+		newNode.next = head;
+		
+		//step 3 : now head is newNode
+		head = newNode;
+		
 	}
 	
 }
