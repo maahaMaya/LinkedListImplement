@@ -11,7 +11,8 @@ public class ProgramWithoutTail {
 		boolean flag = true;
 		while(flag) {
 			System.out.println("Enter an option : \n1: UC1 -> Static SLL. \n2: UC2 -> add firstIndex"
-					+ "\n22: Print SLL Data. \n23: Print SLL Next.");
+					+ "\n3. UC3 -> add lastIndex"
+					+ "\n22: Print SLL Data.  \n23: Print SLL Next.");
 			Scanner myObjectValue = new Scanner(System.in);
 			int option = myObjectValue.nextInt();
 			switch(option) {
@@ -20,6 +21,9 @@ public class ProgramWithoutTail {
 				break;
 			case 2:
 				singlyLL_WithoutTail.addFirstIndex();
+				break;
+			case 3:
+				singlyLL_WithoutTail.addLastIndex();
 				break;
 			case 22:	
 				singlyLL_WithoutTail.displayLL_Data();

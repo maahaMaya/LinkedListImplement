@@ -52,6 +52,7 @@ public class SinglyLL_WithoutTail {
 	//UC2 -> add object in the firstIndex
 	public void addFirstIndex() {
 		
+		//taking input from user
 		Scanner myObjectValue = new Scanner(System.in);
 		System.out.print("Enter number to add in SLL at First Index : ");
 		int nodeInputData = myObjectValue.nextInt();
@@ -71,6 +72,34 @@ public class SinglyLL_WithoutTail {
 		//step 3 : now head is newNode
 		head = newNode;
 		
+	}
+	
+	//UC2 -> add object in the lastIndex
+	public void addLastIndex() {
+		
+		//taking input from user
+		Scanner myObjectValue = new Scanner(System.in);
+		System.out.print("Enter number to add in SLL at Last Index : ");
+		int nodeInputData = myObjectValue.nextInt();
+		
+		//step1 : Create a new node
+		Node newNode = new Node(nodeInputData);
+		
+		//checking LL is empty
+		if(head == null) {
+			head = newNode;
+			return;
+		}
+		
+		Node temp = head;
+		// for getting last index
+		while(temp.next != null) {
+			temp = temp.next;
+		}
+		
+		System.out.println(temp.data);
+		//step 2 : temp.next is null; So we have replace the value with newNode
+		temp.next= newNode;
 	}
 	
 }

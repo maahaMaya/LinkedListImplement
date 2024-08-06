@@ -8,19 +8,23 @@ public class ProgramWithTail {
 	public static void main(String[] args) {
 		SinglyLL_WithTail singlyLL_WithTail = new SinglyLL_WithTail();
 		boolean flag = true;
-		while(flag) {
+		while (flag) {
 			System.out.println("Enter an option : \n1: UC1 -> Static SLL. \n2: UC2 -> add firstIndex"
+					+ "\n3. UC3 -> add lastIndex"
 					+ "\n22: Print SLL Data. \n23: Print SLL Next.");
 			Scanner myObjectValue = new Scanner(System.in);
 			int option = myObjectValue.nextInt();
-			switch(option) {
-			case 1: 
+			switch (option) {
+			case 1:
 				singlyLL_WithTail.createStaticSLL();
 				break;
 			case 2:
 				singlyLL_WithTail.addFirstIndex();
 				break;
-			case 22:	
+			case 3:
+				singlyLL_WithTail.addLastIndex();
+				break;
+			case 22:
 				singlyLL_WithTail.displayLL_Data();
 				break;
 			case 23:
@@ -30,7 +34,7 @@ public class ProgramWithTail {
 				flag = false;
 				System.out.println("THANKYOU!!!!");
 				break;
-			} 
+			}
 		}
 		singlyLL_WithTail.createStaticSLL();
 	}
