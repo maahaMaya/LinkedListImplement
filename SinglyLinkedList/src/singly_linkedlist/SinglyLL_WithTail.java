@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class SinglyLL_WithTail {
 	public Node head ;
 	public Node tail ;
+	public int sizeOfSLL;
 	
 	//print SLL with data 
 	public void displayLL_Data() {
@@ -62,7 +63,8 @@ public class SinglyLL_WithTail {
 		
 		//step1 : Create a new node
 		Node newNode = new Node(nodeInputData);
-		
+		this.sizeOfSLL++;
+	
 		//checking LL is empty
 		if(head == null) {
 			head = tail = newNode;
@@ -77,8 +79,8 @@ public class SinglyLL_WithTail {
 		
 	}
 	
+	//UC3 -> add object in the lastIndex
 	public void addLastIndex() {
-		
 		//taking input from user
 		Scanner myObjectValue = new Scanner(System.in);
 		System.out.print("Enter number to add in SLL at Last Index : ");
@@ -86,6 +88,7 @@ public class SinglyLL_WithTail {
 		
 		//step1 : Create a new node
 		Node newNode = new Node(nodeInputData);
+		this.sizeOfSLL++;
 		
 		//checking LL is empty
 		if(head == null) {
@@ -97,5 +100,10 @@ public class SinglyLL_WithTail {
 		tail.next= newNode;
 		
 		tail = newNode;
+	}
+	
+	//UC4 -> print SLL with length 
+	public void sizeOfSLL() {
+		System.out.println("SLL length is : " + this.sizeOfSLL);
 	}
 }

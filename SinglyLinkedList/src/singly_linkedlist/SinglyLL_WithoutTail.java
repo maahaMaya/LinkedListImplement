@@ -6,6 +6,8 @@ public class SinglyLL_WithoutTail {
 	
 	public Node head ;
 	
+	public int sizeOfSLL;
+	
 	//print SLL with data 
 	public void displayLL_Data() {
 		// We can not change value i.e we take 'temp'
@@ -59,7 +61,7 @@ public class SinglyLL_WithoutTail {
 		
 		//step1 : Create a new node
 		Node newNode = new Node(nodeInputData);
-		
+		this.sizeOfSLL++;
 		//checking LL is empty
 		if(head == null) {
 			head = newNode;
@@ -74,7 +76,7 @@ public class SinglyLL_WithoutTail {
 		
 	}
 	
-	//UC2 -> add object in the lastIndex
+	//UC3 -> add object in the lastIndex
 	public void addLastIndex() {
 		
 		//taking input from user
@@ -84,6 +86,7 @@ public class SinglyLL_WithoutTail {
 		
 		//step1 : Create a new node
 		Node newNode = new Node(nodeInputData);
+		this.sizeOfSLL++;
 		
 		//checking LL is empty
 		if(head == null) {
@@ -100,6 +103,11 @@ public class SinglyLL_WithoutTail {
 		System.out.println(temp.data);
 		//step 2 : temp.next is null; So we have replace the value with newNode
 		temp.next= newNode;
+	}
+	
+	//UC4 -> print SLL with length 
+	public void sizeOfSLL() {
+		System.out.println("SLL length is : " + this.sizeOfSLL);
 	}
 	
 }
