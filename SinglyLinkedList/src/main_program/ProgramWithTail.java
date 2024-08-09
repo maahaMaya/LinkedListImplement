@@ -11,6 +11,7 @@ public class ProgramWithTail {
 		while(flag) {
 			System.out.println("Enter an option : \n1: UC1 -> Static SLL. \n2: UC2 -> add firstObject"
 					+ "\n3. UC3 -> add lastObject \n4: UC4 -> remove firstObject \n4: UC5 -> remove lastObject without Indexing"
+					+ "\n6. UC6 -> add object when Value is matched"
 					+ "\n22: Print SLL Data.  \n23: Print SLL Next. \n24. Print SLL length");
 			Scanner myObjectValue = new Scanner(System.in);
 			int option = myObjectValue.nextInt();
@@ -29,6 +30,9 @@ public class ProgramWithTail {
 				break;
 			case 5:
 				singlyLL_WithTail.removeLastObject();
+				break;
+			case 6:
+				singlyLL_WithTail.addValueMatch();
 				break;
 			case 22:
 				singlyLL_WithTail.displayLL_Data();

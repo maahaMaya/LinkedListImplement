@@ -118,6 +118,7 @@ public class SinglyLL_WithoutTail {
 		}
 		// swap head object
 		this.head = this.head.next;
+		this.sizeOfSLL--;
 	}
 
 	// UC6 -> remove object from the lastIndex without Indexing
@@ -140,6 +141,32 @@ public class SinglyLL_WithoutTail {
 			temp = temp.next;
 			prev = temp;
 		}
+		this.sizeOfSLL--;
 		prev.next = null;
+	}
+
+	// UC7 -> add object when value matches
+	public void addValueMatch() {
+		// taking input from user
+		Scanner myObjectValue = new Scanner(System.in);
+		System.out.print("Enter number to add in SLL when Value matched : ");
+
+		int matchInputData = myObjectValue.nextInt();
+		Node temp = head;
+		while (temp.data != matchInputData) {
+			temp = temp.next;
+		}
+
+		if (temp.data == matchInputData) {
+			System.out.print("Since Value is matched -> Enter number to add in SLL : ");
+			int nodeInputData = myObjectValue.nextInt();
+			Node newNode = new Node(nodeInputData);
+			newNode.next = temp.next;
+			temp.next = newNode;
+			this.sizeOfSLL++;
+			return;
+		}
+
+		System.out.print("Value is not present in SLL.");
 	}
 }
