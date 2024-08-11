@@ -8,11 +8,11 @@ public class ProgramWithTail {
 	public static void main(String[] args) {
 		SinglyLL_WithTail singlyLL_WithTail = new SinglyLL_WithTail();
 		boolean flag = true;
-		while(flag) {
+		while (flag) {
 			System.out.println("Enter an option : \n1: UC1 -> Static SLL. \n2: UC2 -> add firstObject"
-					+ "\n3. UC3 -> add lastObject \n4: UC4 -> remove firstObject \n4: UC5 -> remove lastObject without Indexing"
-					+ "\n6. UC6 -> add object when Value is matched"
-					+ "\n22: Print SLL Data.  \n23: Print SLL Next. \n24. Print SLL length");
+					+ "\n3. UC3 -> add lastObject \n4: UC5 -> remove firstObject without Indexing \n5: UC6 -> remove lastObject without Indexing"
+					+ "\n6. UC7 -> add object when Value is matched. \n7. UC8 -> remove object when Value is matched. "
+					+ "\n22: Print SLL Data.  \n23: Print SLL Next. \n24. UC4 -> Print SLL length");
 			Scanner myObjectValue = new Scanner(System.in);
 			int option = myObjectValue.nextInt();
 			switch (option) {
@@ -33,6 +33,9 @@ public class ProgramWithTail {
 				break;
 			case 6:
 				singlyLL_WithTail.addValueMatch();
+				break;
+			case 7:
+				singlyLL_WithTail.removeValueMatched();
 				break;
 			case 22:
 				singlyLL_WithTail.displayLL_Data();

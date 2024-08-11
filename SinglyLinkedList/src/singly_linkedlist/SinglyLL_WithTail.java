@@ -91,7 +91,7 @@ public class SinglyLL_WithTail {
 
 		// checking LL is empty
 		if (head == null) {
-			head = tail = newNode;
+			this.head = this.tail = newNode;
 			return;
 		}
 
@@ -115,8 +115,11 @@ public class SinglyLL_WithTail {
 		}
 		if (this.head.next == null) {
 			this.head = this.tail = this.head.next;
+			this.sizeOfSLL--;
+			return;
 		}
 		// swap head object
+		this.sizeOfSLL--;
 		this.head = this.head.next;
 	}
 
@@ -130,6 +133,7 @@ public class SinglyLL_WithTail {
 		// check for the head of SLL
 		else if (this.head.next == null) {
 			this.head = this.tail = null;
+			this.sizeOfSLL--;
 			return;
 		}
 
@@ -142,6 +146,8 @@ public class SinglyLL_WithTail {
 		}
 		tail = prev;
 		prev.next = null;
+		this.sizeOfSLL--;
+		System.out.println("Last Object removed from SLL Successfully");
 	}
 
 	// UC7 -> add object when value matches
@@ -167,6 +173,42 @@ public class SinglyLL_WithTail {
 		}
 
 		System.out.print("Value is not present in SLL.");
+	}
+
+	// UC8 -> remove object when value matches
+	public void removeValueMatched() {
+		// taking input from user for finding value
+		Scanner myObjectValue = new Scanner(System.in);
+		System.out.print("Enter number to remove in SLL when Value matched : ");
+		int matchInputData = myObjectValue.nextInt();
+		if (head.next == null && this.head.data == matchInputData) {
+			this.removeFirstObject();
+			return;
+		} else if (this.head.data == matchInputData) {
+			this.removeFirstObject();
+			return;
+		}
+
+		Node temp = this.head;
+		Node prev = null;
+		while (temp.data != matchInputData && temp.next != null) {
+			prev = temp;
+			temp = temp.next;
+		}
+
+		if (temp.data == matchInputData && temp.next == null) {
+			this.removeLastObject();
+			return;
+		} else if (temp.data == matchInputData) {
+			prev.next = temp.next;
+			temp = null;
+			this.sizeOfSLL--;
+			System.out.println("Removed from SLL Successfully : " + matchInputData);
+			return;
+		}
+
+		System.out.print("Value is not present in SLL.");
+
 	}
 
 }
