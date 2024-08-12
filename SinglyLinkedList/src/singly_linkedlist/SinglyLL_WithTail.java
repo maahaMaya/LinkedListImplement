@@ -208,7 +208,49 @@ public class SinglyLL_WithTail {
 		}
 
 		System.out.print("Value is not present in SLL.");
-
 	}
 
+	// UC9 -> add object at Index
+	public void addValueIndex() {
+		// taking input from user
+		Scanner myObjectValue = new Scanner(System.in);
+		System.out.print("Enter index to add in SLL: ");
+
+		int indexInputData = myObjectValue.nextInt();
+
+		System.out.print("Enter number to add in SLL : ");
+		int nodeInputData = myObjectValue.nextInt();
+		Node newNode = new Node(nodeInputData);
+
+		int i = 0;
+		Node temp = head;
+		while (i < indexInputData - 1) {
+			temp = temp.next;
+			i++;
+		}
+
+		newNode.next = temp.next;
+		temp.next = newNode;
+		this.sizeOfSLL++;
+		return;
+	}
+
+	// UC10 -> iterative Search
+	public void iterativesearch() {
+		// taking input from user
+		Scanner myObjectValue = new Scanner(System.in);
+		System.out.print("Enter value to search in SLL: ");
+		int indexInputData = myObjectValue.nextInt();
+
+		Node temp = head;
+		int i = 0;
+		while (temp != null) {
+			if (temp.data == indexInputData)
+				System.out.println("Value found at index : " + i);
+			temp = temp.next;
+			i++;
+		}
+		System.out.println("Value not found at the index");
+
+	}
 }

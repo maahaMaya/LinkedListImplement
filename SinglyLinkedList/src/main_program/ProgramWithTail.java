@@ -11,7 +11,8 @@ public class ProgramWithTail {
 		while (flag) {
 			System.out.println("Enter an option : \n1: UC1 -> Static SLL. \n2: UC2 -> add firstObject"
 					+ "\n3. UC3 -> add lastObject \n4: UC5 -> remove firstObject without Indexing \n5: UC6 -> remove lastObject without Indexing"
-					+ "\n6. UC7 -> add object when Value is matched. \n7. UC8 -> remove object when Value is matched. "
+					+ "\n6. UC7 -> add object when Value is matched. \n7. UC8 -> remove object when Value is matched. \n8. UC9 -> add object to the Index. "
+					+ "\n9. UC10 -> iterative search"
 					+ "\n22: Print SLL Data.  \n23: Print SLL Next. \n24. UC4 -> Print SLL length");
 			Scanner myObjectValue = new Scanner(System.in);
 			int option = myObjectValue.nextInt();
@@ -37,6 +38,12 @@ public class ProgramWithTail {
 			case 7:
 				singlyLL_WithTail.removeValueMatched();
 				break;
+			case 8:
+				singlyLL_WithTail.addValueIndex();
+				break;
+			case 9:
+				singlyLL_WithTail.iterativesearch();
+				break;
 			case 22:
 				singlyLL_WithTail.displayLL_Data();
 				break;
@@ -52,6 +59,5 @@ public class ProgramWithTail {
 				break;
 			}
 		}
-		singlyLL_WithTail.createStaticSLL();
 	}
 }
